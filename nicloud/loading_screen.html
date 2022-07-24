@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="uk">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Loading Screen for Хмаринка Ніклюда</title>
+    <!-- import fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,400;0,700;1,400;1,700&display=swap" rel="stylesheet">
+    <!-- import styles -->
+    <link rel="stylesheet" href="/styles/global.css">
+    <link rel="stylesheet" href="/styles/nicloud/loading_screen.css">
+</head>
+<body>
+    <div class="stats">
+        <span id="curmap">Поточна мапа: 🤔</span>
+    </div>
+    <div class="bottom">
+        <div class="title">Ви входите на Хмаринку Ніклюда...</div>
+
+    </div>
+    <script>
+        var screenshots = [
+            "https://cdn.discordapp.com/attachments/995743253255176233/1000715975416619049/20220724124719_1.jpg",
+            "https://cdn.discordapp.com/attachments/995743253255176233/1000468419218522213/20220723212339_1.jpg",
+            "https://cdn.discordapp.com/attachments/995743253255176233/1000482341334036590/20220723221921_1.jpg",
+            "https://cdn.discordapp.com/attachments/995743253255176233/1000751129140928542/unknown.png",
+            "https://cdn.discordapp.com/attachments/995743253255176233/1000752036717015090/37.png",
+            "https://cdn.discordapp.com/attachments/995743253255176233/1000752061446619226/32.png",
+            "https://cdn.discordapp.com/attachments/995743253255176233/1000758173021511760/42.png",
+            "https://cdn.discordapp.com/attachments/995743253255176233/1000777356178366474/20220724171604_1.jpg",
+            "https://cdn.discordapp.com/attachments/995743253255176233/1000809364866736238/20220724185856_1.jpg"
+        ];
+
+        setInterval(setBackground, 60000)
+        function setBackground() {
+            var selected_screenshot = screenshots[Math.floor(Math.random() * screenshots.length)];
+            document.body.style.backgroundImage = "url(\"" + selected_screenshot + "\")"
+        }
+        setBackground()
+
+        function GameDetails( servername, serverurl, mapname, maxplayers, steamid, gamemode, volume, language ) {
+            document.getElementById("curmap").innerHTML = "Поточна мапа" + mapname;
+        }
+    </script>
+</body>
+</html>
