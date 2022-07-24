@@ -14,12 +14,14 @@
     <link rel="stylesheet" href="/styles/nicloud/loading_screen.css">
 </head>
 <body>
-    <div class="stats">
-        <span id="curmap">Поточна мапа: 🤔</span>
-    </div>
-    <div class="bottom">
-        <div class="title">Ви входите на Хмаринку Ніклюда...</div>
-
+    <div id="content">
+        <img id="screenbg" src="" alt="background">
+        <div class="stats">
+            <span id="curmap">Поточна мапа: 🤔</span>
+        </div>
+        <div class="bottom">
+            <div class="title">Ви входите на Хмаринку Ніклюда...</div>
+        </div>
     </div>
     <script>
         var screenshots = [
@@ -34,15 +36,15 @@
             "https://cdn.discordapp.com/attachments/995743253255176233/1000809364866736238/20220724185856_1.jpg"
         ];
 
-        setInterval(setBackground, 60000)
+        setInterval(setBackground, 30000)
         function setBackground() {
             var selected_screenshot = screenshots[Math.floor(Math.random() * screenshots.length)];
-            document.body.style.backgroundImage = "url(\"" + selected_screenshot + "\")"
+            document.getElementById("screenbg").src = selected_screenshot;
         }
         setBackground()
 
         function GameDetails( servername, serverurl, mapname, maxplayers, steamid, gamemode, volume, language ) {
-            document.getElementById("curmap").innerHTML = "Поточна мапа" + mapname;
+            document.getElementById("curmap").innerHTML = "Поточна мапа: " + mapname;
         }
     </script>
 </body>
