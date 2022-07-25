@@ -41,11 +41,17 @@
             var selected_screenshot = screenshots[Math.floor(Math.random() * screenshots.length)];
             document.getElementById("screenbg").src = selected_screenshot;
         }
-        setBackground()
+        
 
         function GameDetails( servername, serverurl, mapname, maxplayers, steamid, gamemode, volume, language ) {
             document.getElementById("curmap").innerHTML = "Поточна мапа: " + mapname;
         }
+        document.body.classList.add('js-loading');
+
+        window.addEventListener("load", function () {
+            document.body.classList.remove('js-loading');
+            setBackground()
+        });
     </script>
 </body>
 </html>
