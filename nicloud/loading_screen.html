@@ -11,7 +11,7 @@
     <link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,400;0,700;1,400;1,700&display=swap" rel="stylesheet">
     <!-- import styles -->
     <link rel="stylesheet" href="/styles/global.css">
-    <link rel="stylesheet" href="/styles/nicloud/loading_screen.css">
+    <link rel="stylesheet" href="/styles/nicloud/loading_screen.css" await>
 </head>
 <body>
     <div id="content">
@@ -55,16 +55,11 @@
             document.getElementById("screenbg").src = selected_screenshot;
         }
         
-
         function GameDetails( servername, serverurl, mapname, maxplayers, steamid, gamemode, volume, language ) {
             document.getElementById("curmap").innerHTML = "Поточна мапа: " + mapname;
         }
-        document.body.classList.add('js-loading');
-
-        window.addEventListener("load", function () {
-            document.body.classList.remove('js-loading');
-            setBackground()
-        });
+        
+        setBackground();
     </script>
 </body>
 </html>
