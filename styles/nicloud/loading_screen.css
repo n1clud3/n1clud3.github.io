@@ -28,6 +28,15 @@
     backdrop-filter: blur(8px);
 }
 
+.rules {
+    padding: 1em;
+    margin: 1em;
+    width: 23rem;
+    background-color: rgba(0, 0, 0, 0.5);
+    color: white;
+    backdrop-filter: blur(8px);
+}
+
 .bottom {
     position: fixed;
     bottom: 0;
