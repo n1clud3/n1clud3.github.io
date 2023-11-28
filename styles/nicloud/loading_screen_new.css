@@ -107,13 +107,13 @@ BODY
 
 #background
 {
-	background-image: url( 'img/bg.png' );
+	background-image: url( '/res/bg.png' );
 	background-size: 100% 100%;
 	height: 100%;
 }
 body.dark #background
 {
-	background-image: url( 'img/bg_dark.png' );
+	background-image: url( '/res/bg_dark.png' );
 }
 body.dark
 {
