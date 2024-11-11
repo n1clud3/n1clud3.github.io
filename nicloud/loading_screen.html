@@ -11,7 +11,6 @@
     <link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,400;0,700;1,400;1,700&display=swap" rel="stylesheet">
     <!-- import styles -->
     <link rel="stylesheet" href="/styles/global.css">
-    <link rel="stylesheet" href="/styles/nicloud/loading_screen.css" await>
 </head>
 <body>
     <div id="content">
@@ -28,72 +27,51 @@
         </div>
     </div>
     <script>
-        var screenshots = [
-            "https://cdn.discordapp.com/attachments/995743253255176233/1000343753904631808/20220723130818_1.jpg",
-            "https://cdn.discordapp.com/attachments/995743253255176233/1000468419218522213/20220723212339_1.jpg",
-            "https://cdn.discordapp.com/attachments/995743253255176233/1000482341334036590/20220723221921_1.jpg",
-            "https://cdn.discordapp.com/attachments/995743253255176233/1000751129140928542/unknown.png",
-            "https://cdn.discordapp.com/attachments/995743253255176233/1000752036717015090/37.png",
-            "https://cdn.discordapp.com/attachments/995743253255176233/1000752061446619226/32.png",
-            "https://cdn.discordapp.com/attachments/995743253255176233/1000758173021511760/42.png",
-            "https://cdn.discordapp.com/attachments/995743253255176233/1000777356178366474/20220724171604_1.jpg",
-            "https://cdn.discordapp.com/attachments/995743253255176233/1001109420442406932/20220725145105_1.jpg",
-            "https://cdn.discordapp.com/attachments/995743253255176233/1001153532868710500/20220725184537_1.jpg",
-            "https://cdn.discordapp.com/attachments/995743253255176233/1001809081989861486/20220727141012_1.jpg",
-            "https://cdn.discordapp.com/attachments/995743253255176233/1001868660413038732/unknown.png",
-            "https://cdn.discordapp.com/attachments/995743253255176233/1001607331290828900/unknown.png",
-            "https://cdn.discordapp.com/attachments/995743253255176233/1001877666619727974/unknown.png",
-            "https://cdn.discordapp.com/attachments/995743253255176233/1002148415481856040/20220728123835_1.jpg",
-            "https://cdn.discordapp.com/attachments/995743253255176233/1001912477732319362/photo_2022-07-25_17-32-44.jpg",
-            "https://cdn.discordapp.com/attachments/995743253255176233/1002159354658697256/20220725095905_1.jpg",
-            "https://cdn.discordapp.com/attachments/995743253255176233/1002549310526857246/20220729150952_1.jpg",
-            "https://cdn.discordapp.com/attachments/995743253255176233/1002634481263448206/20220729205040_1.jpg",
-            "https://cdn.discordapp.com/attachments/995743253255176233/1010252773075460197/20220819212317_1.jpg",
-            "https://cdn.discordapp.com/attachments/995743253255176233/1010249942612312166/20220819211101_1.jpg",
-            "https://cdn.discordapp.com/attachments/995743253255176233/1009861415080841277/gm_bluehills_test30023.jpg",
-            "https://cdn.discordapp.com/attachments/980802089297006595/1025101894013681748/unknown.png",
-            "https://cdn.discordapp.com/attachments/980802089297006595/1025102058711437432/unknown.png",
-            "https://cdn.discordapp.com/attachments/980802089297006595/1025102726494949467/20220929205131_1.jpg",
+        const screenshots = [
+            "/res/loadscreen/20241111193650_1.jpg",
+            "/res/loadscreen/20241111191320_1.jpg",
+            "/res/loadscreen/20241111191332_1.jpg",
+            "/res/loadscreen/20241111191320_1.jpg",
+            "/res/loadscreen/20241111205850_1.jpg"
         ];
 
-        var rules = [
-            "1.1 – Незнання правил не звільняє від відповідальності.",
-            "1.2 – У спірних ситуаціях (або якщо тут немає прописаного правила) останнє слово залишається за модераторами.",
-            "1.3 - Модератор має право змінювати тяжкість/термін покарання стосовно порушника залежно від кількості порушень цього правила/попереджень.",
-            "1.4 - Будь-який прояв фашизму/нацизму а також деталізованого nsfw контенту заборонено.",
-            "2.1 - Викликати модераторів/скаржитися на гравців з \"рофільної\" або жартівливої ​​причини заборонено.",
-            "2.2 - Брехати модераторам / дезінформувати модераторів заборонено.",
-            "2.3 - Мінгувати/спеціально діяти людям на нерви заборонено.",
-            "4.1 – залишати пропи або ентіті лежати без діла заборонено.",
-            "4.2 - Будівлі, що сильно навантажують сервер або вбивають fps гравців будуть видалені.",
-            "4.3 - Prop block/push/kill заборонений. Виключення: ви вбили гравця гравіті-ганом.",
-            "4.4 - Забудова шляхів переміщення мапою, таких як тунелі заборонено.",
-            "5.1 - Spawn Abuse (вийшов зі спавну, пострілявся і біжиш назад в спавнзону) заборонений.",
-            "5.2 - Використання E2, Outfitter (використання скінів з некоректними хітбоксами) та PAC3 задля здобуття переваги над іншими гравцями заборонено.",
-            "5.3.1 - Використання нокліпу в цілях розгляду бази забороняється.",
-            "5.3.2 - Використання глюків/багів в цілях проникнення на базу заборонено.",
-            "5.3.3 - Шкодити базам гравців, які їх будують в білді заборонено. Це також означає, що гравці в ПВП режимі не мають нападати на бази інших гравців з бази білдера.",
-            "5.4 - Використання режиму будування в цілях допомоги ПВП-гравцям заборонена (наприклад: показувати ПВП-гравцям, де знаходиться їхній ворог)"
+        const rules = [
+            "Не треба заважати іншим гравцям. Розумійте, що він такий же гравець що і ви.",
+            "Не краште сервер, будь ласка.",
+            "Софт, само собою зрозуміло, заборонений.",
+            "Будьте чемні в спілкуванні з іншими гравцями. Без расизму, нацизму, рашизму, переслідувань та мови ворожнечі.",
+            "Слово Ніклюда завжди правильне.",
         ];
 
-        setInterval(setBackground, 30000);
+        setInterval(setBackground, 15000);
         function setBackground() {
-            var selected_screenshot = screenshots[Math.floor(Math.random() * screenshots.length)];
-            document.getElementById("screenbg").src = selected_screenshot;
+            document.getElementById("screenbg").src = screenshots[Math.floor(Math.random() * screenshots.length)];
         }
 
-        setInterval(writeRandomRule, 15000);
+        const link = document.createElement('link');
+        link.rel = 'stylesheet';
+        link.type = 'text/css';
+        link.href = '/styles/nicloud/loading_screen.css';
+        document.head.appendChild(link);
+
+        setInterval(writeRandomRule, 10000);
         function writeRandomRule() {
-            var selected_rule = rules[Math.floor(Math.random() * rules.length)];
-            document.getElementById("random_rule").innerHTML = selected_rule;
+            document.getElementById("random_rule").innerHTML = rules[Math.floor(Math.random() * rules.length)];
         }
+
+        const bgmusic = new Audio("/res/loadscreen/linga_guli_guli.ogg");
+        bgmusic.loop = true;
+        bgmusic.volume = 0.1;
         
         function GameDetails( servername, serverurl, mapname, maxplayers, steamid, gamemode, volume, language ) {
             document.getElementById("curmap").innerHTML = "Поточна мапа: " + mapname;
+            bgmusic.volume = volume * 0.25;
         }
         
         setBackground();
         writeRandomRule();
+
+        bgmusic.play();
     </script>
 </body>
 </html>
