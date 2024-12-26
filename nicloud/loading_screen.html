@@ -69,13 +69,13 @@
             document.getElementById("random_rule").innerHTML = rules[Math.floor(Math.random() * rules.length)];
         }
 
-        const bgmusic = new Audio("/res/loadscreen/weather_outside_is_rizzy.mp3");
+        const bgmusic = new Audio("/res/loadscreen/last_christmas.mp3");
         bgmusic.loop = true;
         bgmusic.volume = 0.1;
         
         function GameDetails( servername, serverurl, mapname, maxplayers, steamid, gamemode, volume, language ) {
             document.getElementById("curmap").innerHTML = "Поточна мапа: " + mapname;
-            bgmusic.volume = volume * 0.25;
+            bgmusic.volume = volume * 0.1;
         }
         
         setBackground();
