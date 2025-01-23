@@ -42,6 +42,7 @@
             "https://steamuserimages-a.akamaihd.net/ugc/5161572136435883/8608FD99485FE0A3B9325E8493AAE8B6FD3A43E7/",
             "https://steamuserimages-a.akamaihd.net/ugc/5163474287880593/67FE3EA32EA4174EF3CBDD88D8D0B51230DBE4D4/",
             "/res/loadscreen/4000_17.jpg",
+            "/res/loadscreen/20250123204033_1.jpg",
         ];
 
         const rules = [
@@ -51,9 +52,10 @@
             "Софт, само собою зрозуміло, заборонений.",
             "Будьте чемні в спілкуванні з іншими гравцями.",
             "Не спамте в чат!!",
+            "Речі з JMod дозволено використовувати лише в PvP режимі.",
         ];
 
-        setInterval(setBackground, 15000);
+        setInterval(setBackground, 10000);
         function setBackground() {
             document.getElementById("screenbg").src = screenshots[Math.floor(Math.random() * screenshots.length)];
         }
@@ -64,7 +66,7 @@
         link.href = '/styles/nicloud/loading_screen.css';
         document.head.appendChild(link);
 
-        setInterval(writeRandomRule, 10000);
+        setInterval(writeRandomRule, 5000);
         function writeRandomRule() {
             document.getElementById("random_rule").innerHTML = rules[Math.floor(Math.random() * rules.length)];
         }
