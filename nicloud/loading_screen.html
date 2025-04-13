@@ -9,56 +9,115 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,400;0,700;1,400;1,700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto+Mono:ital,wght@0,100..700;1,100..700&display=swap" rel="stylesheet">
     <!-- import styles -->
     <link rel="stylesheet" href="/styles/global.css">
 </head>
 <body>
-    <div id="content">
-        <img id="screenbg" src="" alt="background">
-        <div class="stats">
-            <span id="curmap">Поточна мапа: 🤔</span>
+    <img id="screenbg" src="" alt="background">
+        <div class="sidebar">
+            <div class="item fl-row">
+                <img src="/res/hmarka.png" alt="Хмаринка Ніклюда логотип" class="icon">
+                <span class="title" id="title_greeting">Ви приєднуєтесь на Хмаринку Ніклюда...</span>
+                <span id="subtitle_greeting">Український сандбокс сервер з тактичною тематикою</span>
+            </div>
+            <div class="item">
+                <span class="title" id="title_curmap">Поточна мапа</span>
+                <span id="curmap">🤔</span>
+            </div>
+            <div class="item">
+                <span class="title" id="title_random_rule">Рандомне правило</span>
+                <span id="random_rule">якесь рандомне правило</span>
+            </div>
+            <div class="item">
+                <span class="title" id="title_hint">Корисна порада</span>
+                <span id="hint">якась рандомна порада</span>
+            </div>
         </div>
-        <div class="rules">
-            <b>Рандомне правило</b><br>
-            <span id="random_rule">якесь рандомне правило</span>
-        </div>
-        <div class="bottom">
-            <div class="title">Ви входите на Хмаринку Ніклюда...</div>
-        </div>
-    </div>
     <script>
+        let lang = "uk";
+
+        const titles = {
+            uk: {
+                greeting: "Ви приєднуєтесь на Хмаринку Ніклюда",
+                greeting_subt: "Український сандбокс сервер з тактичною тематикою",
+                curmap: "Поточна мапа",
+                random_rule: "Випадкове правило",
+                hint: "Корисна порада"
+            },
+            en: {
+                greeting: "You are joining the Hmarynka of n1clude",
+                greeting_subt: "Ukrainian sandbox server with a tactical theme",
+                curmap: "Current map",
+                random_rule: "Random rule",
+                hint: "Useful hint"
+            }
+        }
+
         const screenshots = [
             "/res/loadscreen/20241111193650_1.jpg",
             "/res/loadscreen/20241111191320_1.jpg",
-            "/res/loadscreen/20241111191332_1.jpg",
+            // "/res/loadscreen/20241111191332_1.jpg",
             "/res/loadscreen/20241111191320_1.jpg",
-            "/res/loadscreen/fumo_altar.png",
+            // "/res/loadscreen/fumo_altar.png",
             "https://steamuserimages-a.akamaihd.net/ugc/5160303099106856/318EED14882E1617D613C2443E6B27D7B3A94EA9/",
-            "https://steamuserimages-a.akamaihd.net/ugc/5160303099106190/D7360E65DAE653C48AF6DE509EE1B29651FDADB9/",
+            // "https://steamuserimages-a.akamaihd.net/ugc/5160303099106190/D7360E65DAE653C48AF6DE509EE1B29651FDADB9/",
             "/res/loadscreen/astolfo_hakita.png",
-            "/res/loadscreen/reklama.jpg",
+            // "/res/loadscreen/reklama.jpg",
             "/res/loadscreen/20241115133004_1.jpg",
-            "/res/loadscreen/niclude_fumo.png",
+            // "/res/loadscreen/niclude_fumo.png",
             "https://steamuserimages-a.akamaihd.net/ugc/5161572136435883/8608FD99485FE0A3B9325E8493AAE8B6FD3A43E7/",
             "https://steamuserimages-a.akamaihd.net/ugc/5163474287880593/67FE3EA32EA4174EF3CBDD88D8D0B51230DBE4D4/",
             "/res/loadscreen/4000_17.jpg",
             "/res/loadscreen/20250123204033_1.jpg",
+            "/res/loadscreen/20250413154124_1.jpg",
+            "/res/loadscreen/grenades.jpg",
+            "/res/loadscreen/20250328191806_1.jpg",
         ];
 
-        const rules = [
-            "Слово Ніклюда завжди правильне.",
-            "Не треба заважати іншим гравцям.",
-            "Не краште сервер, будь ласка.",
-            "Софт, само собою зрозуміло, заборонений.",
-            "Будьте чемні в спілкуванні з іншими гравцями.",
-            "Не спамте в чат!!",
-            "Речі з JMod дозволено використовувати лише в PvP режимі.",
-        ];
-
-        setInterval(setBackground, 10000);
-        function setBackground() {
-            document.getElementById("screenbg").src = screenshots[Math.floor(Math.random() * screenshots.length)];
+        const rules = {
+            uk: [
+                "Слово Ніклюда завжди правильне.",
+                "Не треба заважати іншим гравцям.",
+                "Не краште сервер, будь ласка.",
+                "Софт, само собою зрозуміло, заборонений.",
+                "Будьте чемні в спілкуванні з іншими гравцями.",
+                "Не спамте в чат!!",
+                "Речі з JMod дозволено використовувати лише в PvP режимі.",
+                "Ставити реальні лиця людей без їхнього дозволу заборонено!",
+            ],
+            en: [
+                "n1clude is always right.",
+                "Don't disturb other players' experiences.",
+                "Don't crash the server pls.",
+                "Cheats = ban.",
+                "Be kind and friendly with other players.",
+                "No spamming in chat!!",
+                "JMod things are allowed to use only in PvP mode.",
+                "Don't place textures of faces of other people without their approval!",
+            ]
         }
+
+        const hints = {
+            uk: [
+                "Натисніть <code>Ctrl</code> двічі, щоб лягти на землю.",
+                "Броня з JMod зменшує фатальність попадінь у ваше тіло.",
+                "Не хочете боротись? Пропишіть <code>!build</code> в чат, щоби перейти в режим будівельника.",
+                "Зброю Urban Coalition можна модифікувати та конвертовувати в абсолютно інші стволи. Експериментуйте!",
+                "Боротьба з НІПами - непоганий спосіб прокачати свою міткість.",
+                "Гравець спамить в мікрофон? В таблиці гравців <code>[TAB]</code> є можливість заглушити небажану особу.",
+                "Броня захищає від куль, не від вогню.",
+            ],
+            en: [
+                "Press <code>Ctrl</code> twice to go prone.",
+                "JMod armor decreases the lethality of shots to your body.",
+                "Don't want to fight? Write <code>!build</code> in the chat to enable the build mode.",
+                "Urban Coalition weapons can be modified and converted into completely different guns. Experiment!",
+                "Fighting with NPCs is a good way to improve your accuracy.",
+                "The player spams in the mic? In the scoreboard <code>[TAB]</code> there's a button to mute an unwanted person.",
+                "Armor protects from the bullets, but not from the fire.",
+            ]
+        };
 
         const link = document.createElement('link');
         link.rel = 'stylesheet';
@@ -66,22 +125,43 @@
         link.href = '/styles/nicloud/loading_screen.css';
         document.head.appendChild(link);
 
+        function GameDetails( servername, serverurl, mapname, maxplayers, steamid, gamemode, volume, language ) {
+            document.getElementById("curmap").innerHTML = mapname;
+            bgmusic.volume = volume * 0.1;
+            lang = language;
+            setTitlesLanguage();
+        }
+
+        function setTitlesLanguage() {
+            document.getElementById("title_greeting").innerHTML = titles[lang].greeting;
+            document.getElementById("title_curmap").innerHTML = titles[lang].curmap;
+            document.getElementById("title_random_rule").innerHTML = titles[lang].random_rule;
+            document.getElementById("title_hint").innerHTML = titles[lang].hint;
+        }
+
+        setInterval(setBackground, 10000);
+        function setBackground() {
+            document.getElementById("screenbg").src = screenshots[Math.floor(Math.random() * screenshots.length)];
+        }
+
         setInterval(writeRandomRule, 5000);
         function writeRandomRule() {
-            document.getElementById("random_rule").innerHTML = rules[Math.floor(Math.random() * rules.length)];
+            document.getElementById("random_rule").innerHTML = rules[lang][Math.floor(Math.random() * rules[lang].length)];
+        }
+
+        setInterval(writeRandomHint, 5000);
+        function writeRandomHint() {
+            document.getElementById("hint").innerHTML = hints[lang][Math.floor(Math.random() * hints[lang].length)];
         }
 
         const bgmusic = new Audio("/res/loadscreen/last_christmas.mp3");
         bgmusic.loop = true;
         bgmusic.volume = 0.1;
         
-        function GameDetails( servername, serverurl, mapname, maxplayers, steamid, gamemode, volume, language ) {
-            document.getElementById("curmap").innerHTML = "Поточна мапа: " + mapname;
-            bgmusic.volume = volume * 0.1;
-        }
-        
+        setTitlesLanguage();
         setBackground();
         writeRandomRule();
+        writeRandomHint();
 
         // bgmusic.play();
     </script>
