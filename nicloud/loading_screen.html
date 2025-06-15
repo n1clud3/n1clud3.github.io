@@ -18,7 +18,7 @@
         <div class="sidebar">
             <div class="item fl-row">
                 <img src="/res/hmarka.png" alt="Хмаринка Ніклюда логотип" class="icon">
-                <span class="title" id="title_greeting">Ви приєднуєтесь на Хмаринку Ніклюда...</span>
+                <span class="title" id="title_greeting">бля локалізаціон зламався((</span>
                 <span id="subtitle_greeting">Український сандбокс сервер з тактичною тематикою</span>
             </div>
             <div class="item">
@@ -35,19 +35,19 @@
             </div>
         </div>
     <script>
-        let lang = "uk";
+        let lang = "en";
 
         const titles = {
             uk: {
-                greeting: "Ви приєднуєтесь на Хмаринку Ніклюда",
-                greeting_subt: "Український сандбокс сервер з тактичною тематикою",
+                greeting: "Тактикульний сандбокс Ніклюда",
+                greeting_subt: "Саме так, ви приєднуєтесь на даний сервер",
                 curmap: "Поточна мапа",
                 random_rule: "Випадкове правило",
                 hint: "Корисна порада"
             },
             en: {
-                greeting: "You are joining the Hmarynka of n1clude",
-                greeting_subt: "Ukrainian sandbox server with a tactical theme",
+                greeting: "n1clude's tacticool sandbox",
+                greeting_subt: "That's right, you're currently joining this server",
                 curmap: "Current map",
                 random_rule: "Random rule",
                 hint: "Useful hint"
@@ -55,46 +55,44 @@
         }
 
         const screenshots = [
-            "/res/loadscreen/20241111193650_1.jpg",
-            "/res/loadscreen/20241111191320_1.jpg",
-            // "/res/loadscreen/20241111191332_1.jpg",
-            "/res/loadscreen/20241111191320_1.jpg",
-            // "/res/loadscreen/fumo_altar.png",
-            "https://steamuserimages-a.akamaihd.net/ugc/5160303099106856/318EED14882E1617D613C2443E6B27D7B3A94EA9/",
-            // "https://steamuserimages-a.akamaihd.net/ugc/5160303099106190/D7360E65DAE653C48AF6DE509EE1B29651FDADB9/",
-            "/res/loadscreen/astolfo_hakita.png",
-            // "/res/loadscreen/reklama.jpg",
-            "/res/loadscreen/20241115133004_1.jpg",
-            // "/res/loadscreen/niclude_fumo.png",
-            "https://steamuserimages-a.akamaihd.net/ugc/5161572136435883/8608FD99485FE0A3B9325E8493AAE8B6FD3A43E7/",
-            "https://steamuserimages-a.akamaihd.net/ugc/5163474287880593/67FE3EA32EA4174EF3CBDD88D8D0B51230DBE4D4/",
+            // "/res/loadscreen/20241111193650_1.jpg",
+            // "/res/loadscreen/20241111191320_1.jpg",
+            // // "/res/loadscreen/20241111191332_1.jpg",
+            // "/res/loadscreen/20241111191320_1.jpg",
+            // // "/res/loadscreen/fumo_altar.png",
+            // "https://steamuserimages-a.akamaihd.net/ugc/5160303099106856/318EED14882E1617D613C2443E6B27D7B3A94EA9/",
+            // // "https://steamuserimages-a.akamaihd.net/ugc/5160303099106190/D7360E65DAE653C48AF6DE509EE1B29651FDADB9/",
+            // "/res/loadscreen/astolfo_hakita.png",
+            // // "/res/loadscreen/reklama.jpg",
+            // "/res/loadscreen/20241115133004_1.jpg",
+            // // "/res/loadscreen/niclude_fumo.png",
+            // "https://steamuserimages-a.akamaihd.net/ugc/5161572136435883/8608FD99485FE0A3B9325E8493AAE8B6FD3A43E7/",
+            // "https://steamuserimages-a.akamaihd.net/ugc/5163474287880593/67FE3EA32EA4174EF3CBDD88D8D0B51230DBE4D4/",
             "/res/loadscreen/4000_17.jpg",
             "/res/loadscreen/20250123204033_1.jpg",
-            "/res/loadscreen/20250413154124_1.jpg",
+            // "/res/loadscreen/20250413154124_1.jpg",
             "/res/loadscreen/grenades.jpg",
-            "/res/loadscreen/20250328191806_1.jpg",
+            // "/res/loadscreen/20250328191806_1.jpg",
         ];
 
         const rules = {
             uk: [
                 "Слово Ніклюда завжди правильне.",
-                "Не треба заважати іншим гравцям.",
+                "Користуйтесь здоровим глуздом.",
                 "Не краште сервер, будь ласка.",
                 "Софт, само собою зрозуміло, заборонений.",
                 "Будьте чемні в спілкуванні з іншими гравцями.",
                 "Не спамте в чат!!",
                 "Речі з JMod дозволено використовувати лише в PvP режимі.",
-                "Ставити реальні лиця людей без їхнього дозволу заборонено!",
             ],
             en: [
                 "n1clude is always right.",
-                "Don't disturb other players' experiences.",
+                "Use common sense.",
                 "Don't crash the server pls.",
                 "Cheats = ban.",
                 "Be kind and friendly with other players.",
                 "No spamming in chat!!",
                 "JMod things are allowed to use only in PvP mode.",
-                "Don't place textures of faces of other people without their approval!",
             ]
         }
 
@@ -102,12 +100,11 @@
             uk: [
                 "Натисніть <code>Ctrl</code> двічі, щоб лягти на землю.",
                 "Броня з JMod зменшує фатальність попадінь у ваше тіло.",
-                "Не хочете боротись? Пропишіть <code>!build</code> в чат, щоби перейти в режим будівельника.",
+                "Не хочете стрілятись? Пропишіть <code>!build</code> в чат, щоби перейти в режим будівельника.",
                 "Зброю Urban Coalition можна модифікувати та конвертовувати в абсолютно інші стволи. Експериментуйте!",
                 "Боротьба з НІПами - непоганий спосіб прокачати свою міткість.",
                 "Гравець спамить в мікрофон? В таблиці гравців <code>[TAB]</code> є можливість заглушити небажану особу.",
                 "Броня захищає від куль, не від вогню.",
-                "Фото Ніклюда в душі ви тут не знайдете :)",
             ],
             en: [
                 "Press <code>Ctrl</code> twice to go prone.",
@@ -117,7 +114,6 @@
                 "Fighting with NPCs is a good way to improve your accuracy.",
                 "The player spams in the mic? In the scoreboard <code>[TAB]</code> there's a button to mute an unwanted person.",
                 "Armor protects from the bullets, but not from the fire.",
-                "You won't find the photo of n1clude showering in here :)"
             ]
         };
 
@@ -136,6 +132,7 @@
 
         function setTitlesLanguage() {
             document.getElementById("title_greeting").innerHTML = titles[lang].greeting;
+            document.getElementById("subtitle_greeting").innerHTML = titles[lang].greeting_subt;
             document.getElementById("title_curmap").innerHTML = titles[lang].curmap;
             document.getElementById("title_random_rule").innerHTML = titles[lang].random_rule;
             document.getElementById("title_hint").innerHTML = titles[lang].hint;
