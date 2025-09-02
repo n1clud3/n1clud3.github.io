@@ -24,29 +24,29 @@
                 <span class="title" id="title_curmap">Поточна мапа</span>
                 <span id="curmap">🤔</span>
             </div>
-            <div class="item">
+            <!--<div class="item">
                 <span class="title" id="title_random_rule">Рандомне правило</span>
                 <span id="random_rule">якесь рандомне правило</span>
             </div>
             <div class="item">
                 <span class="title" id="title_hint">Корисна порада</span>
                 <span id="hint">якась рандомна порада</span>
-            </div>
+            </div>-->
         </div>
     <script>
         let lang = "en";
 
         const titles = {
             uk: {
-                greeting: "Тактикульний сандбокс Ніклюда",
-                greeting_subt: "Саме так, ви приєднуєтесь на даний сервер",
+                greeting: "vojna_gmsrv",
+                greeting_subt: "сервер в розробці",
                 curmap: "Поточна мапа",
                 random_rule: "Випадкове правило",
                 hint: "Корисна порада"
             },
             en: {
-                greeting: "n1clude's tacticool sandbox",
-                greeting_subt: "That's right, you're currently joining this server",
+                greeting: "vojna_gmsrv",
+                greeting_subt: "server in development",
                 curmap: "Current map",
                 random_rule: "Random rule",
                 hint: "Useful hint"
@@ -54,24 +54,7 @@
         }
 
         const screenshots = [
-            // "/res/loadscreen/20241111193650_1.jpg",
-            // "/res/loadscreen/20241111191320_1.jpg",
-            // // "/res/loadscreen/20241111191332_1.jpg",
-            // "/res/loadscreen/20241111191320_1.jpg",
-            // // "/res/loadscreen/fumo_altar.png",
-            // "https://steamuserimages-a.akamaihd.net/ugc/5160303099106856/318EED14882E1617D613C2443E6B27D7B3A94EA9/",
-            // // "https://steamuserimages-a.akamaihd.net/ugc/5160303099106190/D7360E65DAE653C48AF6DE509EE1B29651FDADB9/",
-            // "/res/loadscreen/astolfo_hakita.png",
-            // // "/res/loadscreen/reklama.jpg",
-            // "/res/loadscreen/20241115133004_1.jpg",
-            // // "/res/loadscreen/niclude_fumo.png",
-            // "https://steamuserimages-a.akamaihd.net/ugc/5161572136435883/8608FD99485FE0A3B9325E8493AAE8B6FD3A43E7/",
-            // "https://steamuserimages-a.akamaihd.net/ugc/5163474287880593/67FE3EA32EA4174EF3CBDD88D8D0B51230DBE4D4/",
-            "/res/loadscreen/4000_17.jpg",
-            "/res/loadscreen/20250123204033_1.jpg",
-            // "/res/loadscreen/20250413154124_1.jpg",
-            "/res/loadscreen/grenades.jpg",
-            // "/res/loadscreen/20250328191806_1.jpg",
+            "https://images.steamusercontent.com/ugc/9867538612779902926/5047AAD5C7E6C725AB54ED0766F347A59DAF0431/"
         ];
 
         const rules = {
@@ -119,11 +102,10 @@
         const link = document.createElement('link');
         link.rel = 'stylesheet';
         link.type = 'text/css';
-        link.href = '/styles/nicloud/loading_screen.css';
+        link.href = '/styles/nicloud/loading_screen_vojna.css';
         document.head.appendChild(link);
 
         function GameDetails( servername, serverurl, mapname, maxplayers, steamid, gamemode, volume, language ) {
-            document.getElementById("title_greeting").innerHTML = servername;
             document.getElementById("curmap").innerHTML = mapname;
             bgmusic.volume = volume * 0.1;
             lang = language;
@@ -131,38 +113,38 @@
         }
 
         function setTitlesLanguage() {
-            // document.getElementById("title_greeting").innerHTML = titles[lang].greeting;
+            document.getElementById("title_greeting").innerHTML = titles[lang].greeting;
             document.getElementById("subtitle_greeting").innerHTML = titles[lang].greeting_subt;
             document.getElementById("title_curmap").innerHTML = titles[lang].curmap;
-            document.getElementById("title_random_rule").innerHTML = titles[lang].random_rule;
-            document.getElementById("title_hint").innerHTML = titles[lang].hint;
+            // document.getElementById("title_random_rule").innerHTML = titles[lang].random_rule;
+            // document.getElementById("title_hint").innerHTML = titles[lang].hint;
         }
 
-        setInterval(setBackground, 10000);
+        setInterval(setBackground, 30000);
         function setBackground() {
             document.getElementById("screenbg").src = screenshots[Math.floor(Math.random() * screenshots.length)];
         }
 
-        setInterval(writeRandomRule, 5000);
-        function writeRandomRule() {
-            document.getElementById("random_rule").innerHTML = rules[lang][Math.floor(Math.random() * rules[lang].length)];
-        }
+        // setInterval(writeRandomRule, 5000);
+        // function writeRandomRule() {
+        //     document.getElementById("random_rule").innerHTML = rules[lang][Math.floor(Math.random() * rules[lang].length)];
+        // }
 
-        setInterval(writeRandomHint, 5000);
-        function writeRandomHint() {
-            document.getElementById("hint").innerHTML = hints[lang][Math.floor(Math.random() * hints[lang].length)];
-        }
+        // setInterval(writeRandomHint, 5000);
+        // function writeRandomHint() {
+        //     document.getElementById("hint").innerHTML = hints[lang][Math.floor(Math.random() * hints[lang].length)];
+        // }
 
-        const bgmusic = new Audio("/res/loadscreen/last_christmas.mp3");
+        const bgmusic = new Audio("/res/loadscreen/HereInst.mp3");
         bgmusic.loop = true;
         bgmusic.volume = 0.1;
         
         setTitlesLanguage();
         setBackground();
-        writeRandomRule();
-        writeRandomHint();
+        // writeRandomRule();
+        // writeRandomHint();
 
-        // bgmusic.play();
+        bgmusic.play();
     </script>
 </body>
 </html>

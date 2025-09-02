@@ -1,0 +1,83 @@
+@keyframes screenturn {
+    from {
+        transform: scale(1) rotate(0deg);
+    }
+    to {
+        transform: scale(1.2) rotate(5deg);
+    }
+}
+
+body {
+    font-family: 'Roboto Mono', monospace;
+    margin: 0;
+    background-color: black;
+}
+
+code {
+    font-family: 'Roboto Mono', monospace;
+
+    padding: 2px 4px;
+    background-color: rgba(0,0,0, 0.25);
+    border-radius: 4px;
+}
+
+#screenbg {
+    position: fixed;
+    left: 0;
+    top: 0;
+    width: 100%;
+    max-height: 100%;
+
+    z-index: -1;
+    animation-name: screenturn;
+    animation-duration: 30s;
+    animation-timing-function: linear;
+    animation-iteration-count: infinite;
+}
+
+.sidebar {
+    position: fixed;
+    bottom: 0;
+    right: 0;
+    left: 0;
+    margin: auto;
+    width: 28rem;
+    height: max-content;
+}
+
+.fl-row {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+}
+
+.item {
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+    padding: 1em;
+    margin: 1em;
+    width: auto;
+    background-color: rgba(201, 175, 89, 0.33);
+    color: rgb(255, 183, 74);
+    backdrop-filter: blur(8px);
+    border: 1px solid rgba(255, 196, 0, 0.5);
+}
+
+.item .icon {
+    width: 64px;
+    height: 64px;
+    border-radius: 8px;
+}
+
+.item .title {
+    font-size: large;
+    font-weight: bold;
+}
+
+.item #curmap {
+    padding: 4px 8px;
+    background-color: rgba(0,0,0, 0.25);
+    border-radius: 4px;
+    font-family: 'Roboto Mono', monospace;
+}
