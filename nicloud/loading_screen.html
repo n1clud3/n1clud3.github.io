@@ -123,7 +123,6 @@
         document.head.appendChild(link);
 
         function GameDetails( servername, serverurl, mapname, maxplayers, steamid, gamemode, volume, language ) {
-            document.getElementById("title_greeting").innerHTML = servername;
             document.getElementById("curmap").innerHTML = mapname;
             bgmusic.volume = volume * 0.1;
             lang = language;
@@ -131,7 +130,7 @@
         }
 
         function setTitlesLanguage() {
-            // document.getElementById("title_greeting").innerHTML = titles[lang].greeting;
+            document.getElementById("title_greeting").innerHTML = titles[lang].greeting;
             document.getElementById("subtitle_greeting").innerHTML = titles[lang].greeting_subt;
             document.getElementById("title_curmap").innerHTML = titles[lang].curmap;
             document.getElementById("title_random_rule").innerHTML = titles[lang].random_rule;
