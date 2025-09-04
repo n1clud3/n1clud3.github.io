@@ -58,7 +58,7 @@
             "https://images.steamusercontent.com/ugc/17126072027282520024/D2CF2698C95F153CF98D76FF39528EE4585ACD89/"
         ];
 
-        let screenshotsRuntime = structuredClone(screenshots);
+        let screenshotsRuntime = JSON.parse(JSON.stringify(screenshots));
 
         const rules = {
             uk: [
@@ -121,7 +121,7 @@
             screenshotsRuntime.splice(selectionId, 1);
 
             if (screenshotsRuntime.length <= 0) {
-                screenshotsRuntime = structuredClone(screenshots);
+                screenshotsRuntime = JSON.parse(JSON.stringify(screenshots));
             }
         }
 
